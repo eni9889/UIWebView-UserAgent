@@ -11,4 +11,5 @@
 @interface UIWebView(UserAgent)
 + (UIWebView*)webViewWithUserAgent:(NSString*)userAgent;
 + (void)resetUserAgent;
++ (void)setUserAgent:(NSString *)uAgent;
 @end

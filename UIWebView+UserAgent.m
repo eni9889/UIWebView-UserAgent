@@ -19,13 +19,7 @@
 {
     NSString *userAgent = [UserAgent defaultUserAgent];
     NSString *uniqueID = nil;
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
-    {
-        uniqueID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    }
-    else{
-        uniqueID = [[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)];
-    }
+    uniqueID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     userAgent = [userAgent stringByAppendingFormat:@" MobileVids and udid:[%@]", uniqueID];
     NSDictionary *def = [NSDictionary dictionaryWithObject:userAgent forKey:@"UserAgent"];
     [[NSUserDefaults standardUserDefaults] registerDefaults:def];
